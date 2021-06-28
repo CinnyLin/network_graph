@@ -18,3 +18,8 @@ The goal of this project is to reduce the time students spend on looking into di
 ## Project Demo
 
 [![project demo](https://github.com/CinnyLin/network_graph/blob/main/project_demo.jpg)](https://nyu-cs-prof-network.herokuapp.com/)
+
+## Credits
+
+- Special thanks to Prof Grace Haaf for inspiring this project.
+- Shout to Prakhar Rathi for helping with the deployment of the project.
