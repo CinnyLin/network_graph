@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Network of NYU CS Professor</title>
+    
+    <title>Network of NYU CS Professors</title>
+    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -11,19 +13,23 @@
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style_n.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="icon" href="{{ url_for('static', filename= 'assets/img/nyu2.png') }}">
+    <!-- <link href="/img/nyu2.png" rel="apple-touch-icon" /> -->
+
     <style>
         .initial a {
           text-transform: initial;
         }
-      </style>
+    </style>
 </head>
+
 
 <body>
     <script src="https://d3js.org/d3.v3.js"></script>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <a class="navbar-brand" href="/">KnowMyProfessor.com</a>
+            <a class="navbar-brand" href="/" autocapitalize="off">KnowMyProfessor.com</a>
           </div>
           <ul class="nav navbar-nav">
             <li class="active"><a href="/">Home</a></li>
@@ -35,47 +41,74 @@
               </ul>
             </li>
             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="/">Start Race <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                  <li><a href="/race/NYU">by yearly citation</a></li>
-                  <li><a href="/race/NYU/total_">by total citation</a></li>
-                </ul>
-              </li>
+              <ul class="dropdown-menu">
+                <li><a href="/race/NYU">by yearly citation</a></li>
+                <li><a href="/race/NYU/total_">by total citation</a></li>
+              </ul>
+            </li>
+            <!-- <li>
+              <a href="https://github.com/CinnyLin/network_graph">
+                &copy Cinny Lin. 2020.</a>
+            </li> -->
           </ul>
         </div>
       </nav>
     
-    <div class="container">
-        
-            
-          <div class="row">
-            <div class="col-sm-12 center-block">
-              <h1>Here is {{SCHOOL}}'s citation network.</h1>
-          `</div>
-          </div>
-          <div class="row">
-                <div class="col-sm-10 center-block" id = "gg"></div>
-            <div class="col-sm-2 center-block">
-                <div class="type-1">
-                    <h2>Start a race</h2>
-                    <div>
-                        <a href = '/race/NYU' class="btn btn-1">
-                        <span class="txt">by yearly citations&nbsp; &nbsp; &nbsp; &nbsp; </span>
-                        <span class="round"><i class="fa fa-chevron-right"></i></span>
-                        </a>
-                    </div>
-                    <p></p>
-                    <div>
-                        <a href='/race/NYU/total_' class="btn btn-2">
-                        <span class="txt">by total citations&nbsp; &nbsp; &nbsp; &nbsp; </span>
-                        <span class="round"><i class="fa fa-chevron-right"></i></span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-          </div>
+    <div class="container">     
+      
+      <div class="row">
+        <div class="col-sm-12 center-block">
+          <h1>Here is {{SCHOOL}}'s citation network.</h1>
         </div>
-    <script>
-        // THINGS TO WORK ON
+      </div>
+
+      <div class="row">
+        <div class="col-sm-10 center-block" id = "gg"></div>
+        
+        <div class="col-sm-2 center-block">
+        
+          <div class="type-1">
+            <h2>Start a race</h2>
+
+            <div>
+              <a href = '/race/NYU' class="btn btn-1">
+              <span class="txt">by yearly citations&nbsp; &nbsp; &nbsp; &nbsp; </span>
+              <span class="round"><i class="fa fa-chevron-right"></i></span>
+              </a>
+            </div>
+
+            <p></p>
+
+            <div>
+                <a href='/race/NYU/total_' class="btn btn-2">
+                <span class="txt">by total citations&nbsp; &nbsp; &nbsp; &nbsp; </span>
+                <span class="round"><i class="fa fa-chevron-right"></i></span>
+                </a>
+            </div>
+
+            <p></p>
+
+            <!-- <h2>Credits</h2> -->
+            <div>
+              <p></p>
+              <!-- <p>Developed by Cinny Lin, Yuhao Ding, and Huanci Wang.</p> -->
+              <!-- <p>Produced by Cinny Lin.</p> -->
+              <!-- <p>Inspired by Grace Haaf for idea initialization.</p> -->
+              <!-- <p>Special thanks to Prakhar Rathi for deployment.</p> -->
+              <p>Last updated Dec 2020.</p>
+              <p>&copy Cinny Lin</p>
+            </div>
+          
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+
+<script>
+// THINGS TO WORK ON
 // 1. make layout wider
 // 2. highlight that network
 // 3. can also click name
